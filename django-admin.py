@@ -1,0 +1,1 @@
+/Library/Frameworks/Python.framework/Versions/3.10/bin/usr/local/bin/django-admin.py
