@@ -1,0 +1,15 @@
+{% extends 'my_app/base.html' %}
+
+{% block main-content %}
+
+<div class='cont d-flex justify-content-between'>
+{%for post in posts%}
+    <div class='mainguy d-flex flex-column'>
+        <h2>{{post.title}}</h2>
+        <h4>{{post.body}}</h4>
+    </div>
+{% endfor %}
+   
+    <div class='sideguy'>{{last_post.title}}</div>
+</div>
+{% endblock main-content %}
