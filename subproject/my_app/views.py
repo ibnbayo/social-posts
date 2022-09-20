@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+
+from .forms import SignUpForm
 from .models import Post
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
@@ -17,7 +19,7 @@ def get_about_page(request):
 
 def signup(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = SignUpForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
             print(username)
@@ -25,5 +27,14 @@ def signup(request):
             messages.success(request, f"{username}, account created successfully")
             return redirect('home')
     else:
-        form = UserCreationForm()
+        form = SignUpForm()
     return render(request, 'my_app/signup.html', {'form': form})
+
+def sides(request):
+    posts = Post.objects.all()
+    last_post = Post.objects.all().last()
+    print(posts)
+    return render(request, 'my_app/sides.html', {'posts': posts,'last_post': last_post})
+
+
+   
