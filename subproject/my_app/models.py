@@ -11,3 +11,4 @@ class Post(models.Model):
     body = models.TextField() #large input
     date_created = models.DateTimeField(default=timezone.now) #calendar
     owner = models.ForeignKey(User, on_delete=models.CASCADE) #one to many is foreign key, many to many also exists
+

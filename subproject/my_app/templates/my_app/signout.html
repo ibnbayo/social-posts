@@ -1,0 +1,7 @@
+{%extends 'my_app/base.html'%} {% load crispy_forms_tags %} {%block main-content%}
+<div>
+  <h3>Logged out, mafo!</h3>
+  <a href="{%url 'signin'%}">Log in Again</a>
+</div>
+
+{%endblock main-content%}
